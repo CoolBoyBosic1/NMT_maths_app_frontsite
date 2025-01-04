@@ -1,14 +1,6 @@
 export default function Page() {
   return (
     <>
-      {/* Верхній блок з Реєстрацією та іконкою користувача */}
-      <div className="container mt-3 d-flex justify-content-end align-items-center gap-3">
-        <a className="text-primary" href="/register">Реєстрація/Увійти</a>
-        <a className="text-primary" href="/profile">
-          <i className="bi bi-person"></i>
-        </a>
-      </div>
-
       {/* Хедер */}
       <header className="bg-white py-5 border-bottom">
         <div className="container px-5 text-center">
@@ -16,15 +8,48 @@ export default function Page() {
             <div className="col-lg-8">
               <h1 className="fw-bold display-4 text-primary mb-2">Maths</h1>
               <p className="lead text-dark mb-4">онлайн-тести НМТ з математики</p>
-              <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                <a className="btn btn-outline-primary btn-lg" href="#!">Швидкий тест у форматі НМТ</a>
-                <a className="btn btn-outline-primary btn-lg" href="#!">Створити індивідуальну програму</a>
-                <a className="btn btn-outline-primary btn-lg" href="#!">Розв’язування задач</a>
-              </div>
             </div>
           </div>
         </div>
       </header>
+
+      {/* Основна частина з кнопками */}
+      <section className="py-5">
+        <div className="container px-5">
+          <div className="row justify-content-center">
+            {/* Перша кнопка */}
+            <div className="col-md-4 mb-4 d-flex align-items-center justify-content-center">
+              <a
+                href="#!"
+                className="btn btn-outline-primary btn-lg d-flex align-items-center justify-content-center"
+                style={{ height: '100px', width: '300px' }}
+              >
+                Швидкий тест у форматі НМТ
+              </a>
+            </div>
+            {/* Друга кнопка */}
+            <div className="col-md-4 mb-4 d-flex align-items-center justify-content-center">
+              <a
+                href="/personal_program"
+                className="btn btn-outline-primary btn-lg d-flex align-items-center justify-content-center"
+                style={{ height: '100px', width: '300px' }}
+              >
+                Створити індивідуальну програму
+              </a>
+            </div>
+            {/* Третя кнопка */}
+            <div className="col-md-4 mb-4 d-flex align-items-center justify-content-center">
+              <a
+                href="/type_of_problems"
+                className="btn btn-outline-primary btn-lg d-flex align-items-center justify-content-center"
+                style={{ height: '100px', width: '300px' }}
+              >
+                Розв’язування задач
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Секція "Чому обрати нас?" */}
       <section className="py-5">
@@ -54,18 +79,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-
-      {/* Футер */}
-      <footer className="py-4 bg-light border-top">
-        <div className="container px-5 text-center">
-          <p className="m-0 text-muted">
-            Контакти:<br />
-            Email: helloworld_maths_NMT@gmail.com<br />
-            Telegram: @helloworld_maths_NMT<br />
-            © 2025 «Maths.ua».
-          </p>
-        </div>
-      </footer>
     </>
   );
 }
