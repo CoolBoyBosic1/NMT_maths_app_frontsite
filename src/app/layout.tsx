@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import "./styles/styles.css";
 import Head from "next/head";
+import Image from "next/image";
 
 export const metadata = {
   title: "Kitacademy",
@@ -24,7 +25,12 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
               className="text-decoration-none text-primary fw-bold"
               style={{fontSize: "1.5rem"}}
             >
-              HelloMaths
+              <Image
+                src="/kitacademy-logo-edited.png"
+                alt="Kitacademy logo"
+                width={200}
+                height={50}
+              />
             </a>
           </div>
 

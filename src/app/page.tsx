@@ -1,4 +1,5 @@
 import EducationalPrograms from "./ui/startPage/gridEducationalPrograms";
+import NavigationSection from "./ui/startPage/NavigationCard";
 
 export default function Page() {
   return (
@@ -19,9 +20,8 @@ export default function Page() {
 
       {/* Основна частина з кнопками */}
       <section className="py-5">
-        <div className="container px-5">
+        {/* <div className="container px-5">
           <div className="row justify-content-center">
-            {/* Перша кнопка */}
             <div className="col-md-4 mb-4 d-flex align-items-center justify-content-center">
               <a
                 href="#!"
@@ -31,7 +31,6 @@ export default function Page() {
                 Швидкий тест у форматі НМТ
               </a>
             </div>
-            {/* Друга кнопка */}
             <div className="col-md-4 mb-4 d-flex align-items-center justify-content-center">
               <a
                 href="/personal_program"
@@ -41,7 +40,6 @@ export default function Page() {
                 Створити індивідуальну програму
               </a>
             </div>
-            {/* Третя кнопка */}
             <div className="col-md-4 mb-4 d-flex align-items-center justify-content-center">
               <a
                 href="/type_of_problems"
@@ -52,7 +50,8 @@ export default function Page() {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
+        <NavigationSection />
       </section>
 
       {/* Секція "Чому обрати нас?" */}
