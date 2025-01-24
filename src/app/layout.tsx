@@ -1,17 +1,17 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './globals.css';
-import './styles/styles.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.css";
+import "./styles/styles.css";
+import Head from "next/head";
 
 export const metadata = {
-  title: 'HelloMaths',
-  description: 'Онлайн-тести НМТ',
+  title: "Kitacademy",
+  description: "Онлайн-тести НМТ",
+  icons: {
+    icon: "/tab-icon.png",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body className="d-flex flex-column min-vh-100">
@@ -22,7 +22,7 @@ export default function RootLayout({
             <a
               href="/"
               className="text-decoration-none text-primary fw-bold"
-              style={{ fontSize: "1.5rem" }}
+              style={{fontSize: "1.5rem"}}
             >
               HelloMaths
             </a>
@@ -46,10 +46,12 @@ export default function RootLayout({
         <footer className="py-4 bg-light border-top">
           <div className="container text-center">
             <p className="m-0 text-muted">
-              Контакти:<br />
-              Email: helloworld_maths_NMT@gmail.com<br />
-              Telegram: @helloworld_maths_NMT<br />
-              © 2025 «Maths.ua».
+              Контакти:
+              <br />
+              Email: helloworld_maths_NMT@gmail.com
+              <br />
+              Telegram: @helloworld_maths_NMT
+              <br />© 2025 «Maths.ua».
             </p>
           </div>
         </footer>

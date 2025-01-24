@@ -1,9 +1,16 @@
 "use client"; // Додаємо директиву для клієнтського компонента
 
-import { useState } from "react";
-
+import {useState} from "react";
+import "../styles/styles.css";
 export default function PersonalPlanPage() {
   const [showCheckbox, setShowCheckbox] = useState(true); // Галочка з'являється, якщо тест не пройдено.
+  const [hoursHumber, setHoursNumber] = useState("");
+  const [error, setError] = useState<null | string>(null);
+
+  const validateHours = (hours: number) => {
+    if (hours < 0 || hours > 168) return "Enter the correct number of hours";
+    return null;
+  };
 
   return (
     <div className="d-flex flex-column justify-content-between min-vh-100">
@@ -13,7 +20,8 @@ export default function PersonalPlanPage() {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <h2 className="lead text-dark mb-4">
-                Швидкий тест у форматі НМТ забезпечить вам персоналізований план під ваші теперішні знання
+                Швидкий тест у форматі НМТ забезпечить вам персоналізований план
+                під ваші теперішні знання
               </h2>
               <div className="d-flex justify-content-center mb-3">
                 <a
@@ -39,7 +47,7 @@ export default function PersonalPlanPage() {
                     className="form-check-input"
                   />
                   <label htmlFor="skipTest" className="form-check-label">
-                     Відмовляюсь проходити швидкий тест
+                    Відмовляюсь проходити швидкий тест
                   </label>
                 </div>
               )}
@@ -67,7 +75,27 @@ export default function PersonalPlanPage() {
               <input
                 id="hours"
                 type="number"
-                placeholder="Введіть кількість годин"
+                placeholder={"Введіть кількість годин"}
+                value={hoursHumber}
+                maxLength={3}
+                onKeyDown={(e) => {
+                  if (e.key === "-" || e.key === "e" || e.key === "+") {
+                    e.preventDefault();
+                  }
+                }}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only allow numbers up to 3 digits
+                  if (value === "" || /^[0-9]{0,3}$/.test(value)) {
+                    setHoursNumber(value);
+                    if (validateHours(Number(value))) {
+                      console.log("data", Number(value));
+                      setError(validateHours(Number(value)));
+                    } else {
+                      setError(null);
+                    }
+                  }
+                }}
                 className="form-control mx-auto"
                 style={{
                   width: "300px",
@@ -76,6 +104,11 @@ export default function PersonalPlanPage() {
                 }}
               />
             </div>
+            {error && (
+              <div className="text-danger">
+                <p>{error}</p>
+              </div>
+            )}
 
             {/* Поле для дати завершення */}
             <div className="mb-4 text-center">
@@ -104,6 +137,7 @@ export default function PersonalPlanPage() {
 
             {/* Кнопка "Створити план" */}
             <button
+              disabled={!!error}
               type="submit"
               className="btn btn-outline-primary btn-lg d-flex align-items-center justify-content-center"
               style={{

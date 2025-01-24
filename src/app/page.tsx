@@ -1,3 +1,5 @@
+import EducationalPrograms from "./ui/startPage/gridEducationalPrograms";
+
 export default function Page() {
   return (
     <>
@@ -7,7 +9,9 @@ export default function Page() {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <h1 className="fw-bold display-4 text-primary mb-2">Maths</h1>
-              <p className="lead text-dark mb-4">онлайн-тести НМТ з математики</p>
+              <p className="lead text-dark mb-4">
+                онлайн-тести НМТ з математики
+              </p>
             </div>
           </div>
         </div>
@@ -22,7 +26,7 @@ export default function Page() {
               <a
                 href="#!"
                 className="btn btn-outline-primary btn-lg d-flex align-items-center justify-content-center"
-                style={{ height: '100px', width: '300px' }}
+                style={{height: "100px", width: "300px"}}
               >
                 Швидкий тест у форматі НМТ
               </a>
@@ -32,7 +36,7 @@ export default function Page() {
               <a
                 href="/personal_program"
                 className="btn btn-outline-primary btn-lg d-flex align-items-center justify-content-center"
-                style={{ height: '100px', width: '300px' }}
+                style={{height: "100px", width: "300px"}}
               >
                 Створити індивідуальну програму
               </a>
@@ -42,7 +46,7 @@ export default function Page() {
               <a
                 href="/type_of_problems"
                 className="btn btn-outline-primary btn-lg d-flex align-items-center justify-content-center"
-                style={{ height: '100px', width: '300px' }}
+                style={{height: "100px", width: "300px"}}
               >
                 Розв’язування задач
               </a>
@@ -53,7 +57,8 @@ export default function Page() {
 
       {/* Секція "Чому обрати нас?" */}
       <section className="py-5">
-        <div className="container px-5">
+        <EducationalPrograms />
+        {/* <div className="container px-5">
           <h2 className="fw-bolder mb-4 text-center text-primary">Чому обрати нас?</h2>
           <div className="row gx-5 gy-4 justify-content-center">
             <div className="col-md-4">
@@ -77,7 +82,7 @@ export default function Page() {
               <p className="mb-0">Навчайтеся у зручний для вас час та з будь-якого місця</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );
